@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AngularPDD';
+  topTabSelect:number;
   tabs:tab[]=[
     {
       title: '热门',
@@ -65,6 +66,9 @@ export class AppComponent {
       linK:""
     },
   ]
+  setTopSelect(i:number):void{
+    this.topTabSelect = i;
+  }
 }
 interface tab {
   title:string;
