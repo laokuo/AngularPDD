@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "AngularPDD"
+    }
+  },
+  "defaultProject": "AngularPDD",
+  "cli": {
+    "analytics": "0cb7a4ae-8818-46f9-8df7-ac28436e73aa"
+  }
 }
