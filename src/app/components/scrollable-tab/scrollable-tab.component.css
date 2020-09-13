@@ -1,0 +1,23 @@
+ul {
+  margin: 0;
+  padding: 0;
+  /*  TODO:Flex布局*/
+  display: flex;
+  flex-direction: row;
+}
+ul li{
+  display: inline-block;
+  margin: 0 5px;
+  /*  TODO:注意这个属性*/
+  white-space: nowrap;
+}
+a{
+  text-decoration: none;
+}
+.active{
+  background: red;
+}
+::-webkit-scrollbar{
+  display: none;
+}
+
