@@ -5,5 +5,8 @@
       href="#"
       (click)="setTopSelect(i)">
       {{tab.title}}</a>
+    <!--      click里面可以直接写表达式-->
+  <span class="indicator" *ngIf="topTabSelect===i"></span>
   </li>
+
 </ul>

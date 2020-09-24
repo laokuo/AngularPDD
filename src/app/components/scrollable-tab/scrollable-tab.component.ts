@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-scrollable-tab',
@@ -12,69 +12,15 @@ export class ScrollableTabComponent implements OnInit {
   ngOnInit(): void {
   }
   topTabSelect:number;
-  tabs:tab[]=[
-    {
-      title: '热门',
-      linK:""
-    },
-    {
-      title: '男装',
-      linK:""
-    },
-    {
-      title: '女装',
-      linK:""
-    },
-    {
-      title: '蔬菜',
-      linK:""
-    },
-    {
-      title: '水果',
-      linK:""
-    },
-    {
-      title: '手机',
-      linK:""
-    },
-    {
-      title: '电脑',
-      linK:""
-    },
-    {
-      title: '鞋袜',
-      linK:""
-    },
-    {
-      title: '户外运动',
-      linK:""
-    },
-    {
-      title: '车',
-      linK:""
-    },
-    {
-      title: '房',
-      linK:""
-    },
-    {
-      title: '外卖',
-      linK:""
-    },
-    {
-      title: '零食',
-      linK:""
-    },
-    {
-      title: '老干妈',
-      linK:""
-    },
-  ]
+  @Input() tabs:tab[]=[];
+  @Output() tabSelected = new EventEmitter();
   setTopSelect(i:number):void{
     this.topTabSelect = i;
+    this.tabSelected.emit(this.tabs[this.topTabSelect]);
   }
 }
-interface tab {
+//在类外也能被index.ts导出？
+export interface tab {
   title:string;
   linK:string;
 }
