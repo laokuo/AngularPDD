@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {AfterContentInit, AfterViewInit, Component, OnChanges, OnInit} from '@angular/core';
 import {tab} from './components/scrollable-tab';
 
 @Component({
@@ -6,7 +6,7 @@ import {tab} from './components/scrollable-tab';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit,OnInit,OnChanges,AfterContentInit{
   title = 'AngularPDD';
   tabs:tab[]=[{
   title: '热门',
@@ -41,7 +41,7 @@ export class AppComponent {
     linK:""
 },
 {
-  title: '户外运动',
+  title: '运动',
     linK:""
 },
 {
@@ -68,6 +68,21 @@ export class AppComponent {
 
   handleTabSelect(tab:tab) {
     console.log(tab);
+  }
+  constructor() {
+    console.log("父组件的constructor");
+  }
+  ngOnChanges(){
+    console.log("父组件的ngOnChanges");
+  }
+  ngOnInit(): void {
+    console.log("父组件的ngOnInit");
+  }
+  ngAfterContentInit(): void {
+    console.log("父组件的ngAfterContentInit");
+  }
+  ngAfterViewInit(): void {
+    console.log("父组件的ngAfterViewInit");
   }
 }
 
