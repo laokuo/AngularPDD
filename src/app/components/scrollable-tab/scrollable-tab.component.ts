@@ -14,6 +14,7 @@ export class ScrollableTabComponent implements OnInit {
   topTabSelect:number;
   @Input() tabs:tab[]=[];
   @Output() tabSelected = new EventEmitter();
+  @Input() backgroundColor: string = '#fff';
   setTopSelect(i:number):void{
     this.topTabSelect = i;
     this.tabSelected.emit(this.tabs[this.topTabSelect]);
